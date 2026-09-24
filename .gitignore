@@ -3,3 +3,6 @@ crivo_mpi
 *.o
 gmon.out
 primos.txt
+
+gmon.out
+primos_linear.txt
