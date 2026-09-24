@@ -1,0 +1,5 @@
+crivo_sequencial
+crivo_mpi
+*.o
+gmon.out
+primos.txt
