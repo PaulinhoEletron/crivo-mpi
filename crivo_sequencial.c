@@ -56,7 +56,7 @@ int main(int argc, char *argv[]){
 	
 	for (int i = 2; i <= n; i++) {
 		if ( (composto[i]) == 0) {
-			if(fprintf(saida, "%d", i) < 0) {
+			if(fprintf(saida, "%d ", i) < 0) {
 				break;
 			}
 		}
