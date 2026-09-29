@@ -61,6 +61,7 @@ int main(int argc, char *argv[]){
 			}
 		}
 	}
+	fprintf(saida, "\n");
 	// termina a leitura do vetor
 	
 	int error = ferror(saida);
