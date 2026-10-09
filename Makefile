@@ -36,3 +36,12 @@ cic:
 cicrun:
 	mpirun $(MPI_FLAGS) -np $(NP) ./crivo_ciclico $(ARG)
 	#cat primos.txt
+
+cnt:
+	mpicc crivo_mpi_contiguo.c crivo_common.c -o crivo_contiguo -lm
+	mpirun $(MPI_FLAGS) -np $(NP) ./crivo_contiguo $(ARG)
+	#cat primos.txt
+
+cntrun:
+	mpirun $(MPI_FLAGS) -np $(NP) ./crivo_contiguo $(ARG)
+	#cat primos.txt
