@@ -1,19 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <errno.h>
-#include <limits.h>
-
-void crivo(unsigned char *composto, int n) {
-// Define a funcao do crivo linear, recebendo um vetor e o limite n superior
-	composto[0] = composto[1] = 1;
-	for(int p = 2; p <= n/p; p++)  {
-		if ((composto[p]) == 0) {
-			for (long long m = (long long)p * p; m <= n; m+=p) {
-				composto[m] = 1;
-			}
-		}
-	}
-}
+#include "crivo_common.h"
 
 int main(int argc, char *argv[]){
 // Começa o programa, argc conta os argumentos e argv guarda os dados

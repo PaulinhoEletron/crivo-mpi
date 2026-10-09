@@ -1,4 +1,5 @@
 crivo_sequencial
+crivo_ciclico
 crivo_mpi
 *.o
 gmon.out
