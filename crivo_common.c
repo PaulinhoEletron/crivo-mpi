@@ -6,8 +6,6 @@
 #include <math.h>
 #include "crivo_common.h"
 
-enum { TASK = 10, RESULT = 11, VALUES = 12 };
-
 void *allocate(size_t count, size_t width) {
     void *ptr = calloc(count ? count : 1, width);
     if (ptr == NULL) {

@@ -14,8 +14,6 @@
 #error BLOCK_SIZE_must_be_positive
 #endif
 
-enum { TASK = 10, RESULT = 11, VALUES = 12 };
-
 static void master(int n, int workers, unsigned char *primes) {
     for (int rank = 1; rank <= workers; rank++) {
         int task[2] = {rank - 1, n};
