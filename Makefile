@@ -45,3 +45,12 @@ cnt:
 cntrun:
 	mpirun $(MPI_FLAGS) -np $(NP) ./crivo_contiguo $(ARG)
 	#cat primos.txt
+
+din:
+	mpicc crivo_mpi_dinamico.c crivo_common.c -o crivo_dinamico -lm
+	mpirun $(MPI_FLAGS) -np $(NP) ./crivo_dinamico $(ARG)
+	cat primos.txt
+
+dinrun:
+	mpirun $(MPI_FLAGS) -np $(NP) ./crivo_dinamico $(ARG)
+	cat primos.txt
