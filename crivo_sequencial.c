@@ -1,7 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <errno.h>
-#include <limits.h>
 #include "crivo_common.h"
 
 int main(int argc, char *argv[]){

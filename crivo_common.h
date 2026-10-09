@@ -2,6 +2,12 @@
 #define CRIVO_COMMON_H
 
 #include <stddef.h>
+#include <mpi.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <errno.h>
+#include <limits.h>
+#include <math.h>
 
 enum { TASK = 10, RESULT = 11, VALUES = 12 };
 
