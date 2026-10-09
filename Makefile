@@ -44,4 +44,4 @@ cnt:
 
 cntrun:
 	mpirun $(MPI_FLAGS) -np $(NP) ./crivo_contiguo $(ARG)
-	cat primos.txt
+	#cat primos.txt

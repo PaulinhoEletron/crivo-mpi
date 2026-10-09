@@ -114,12 +114,13 @@ int main(int argc, char *argv[]) {
             for (int i = 2; i <= n; i++) {
                 if (primes[i]) {
                     total++;
-                    if (fprintf(file, "%d\n", i) < 0) {
+                    if (fprintf(file, "%d ", i) < 0) {
                         result = EXIT_FAILURE;
                         break;
                     }
                 }
             }
+            fprintf(file, "\n");
 
             if (fclose(file) != 0) result = EXIT_FAILURE;
 
