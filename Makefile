@@ -49,8 +49,8 @@ cntrun:
 din:
 	mpicc crivo_mpi_dinamico.c crivo_common.c -o crivo_dinamico -lm
 	mpirun $(MPI_FLAGS) -np $(NP) ./crivo_dinamico $(ARG)
-	cat primos.txt
+	#cat primos.txt
 
 dinrun:
 	mpirun $(MPI_FLAGS) -np $(NP) ./crivo_dinamico $(ARG)
-	cat primos.txt
+	#cat primos.txt
