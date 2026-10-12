@@ -19,6 +19,9 @@ else
     MPI_FLAGS :=
 endif
 
+#gcc -pg crivo_sequencial.c crivo_common.c -o crivo_sequencial
+#gprof crivo_sequencial gmon.out > relatorio.txt
+
 seq:
 	mpicc crivo_sequencial.c crivo_common.c -o crivo_sequencial
 	./crivo_sequencial $(ARG)

@@ -159,7 +159,6 @@ int main(int argc, char *argv[]) {
     }
 
     free(base);
-    MPI_Bcast(&result, 1, MPI_INT, 0, MPI_COMM_WORLD);
     MPI_Finalize();
 
     return result;
