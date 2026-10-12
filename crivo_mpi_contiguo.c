@@ -26,10 +26,7 @@ static void master(int n, int workers, unsigned char *primes) {
     }
 }
 
-static void worker(int rank, int workers, const int *base, int count) {
-    (void)rank;
-    (void)workers;
-
+static void worker(const int *base, int count) {
     int task[2];
     MPI_Recv(task, 2, MPI_INT, 0, TASK,
              MPI_COMM_WORLD, MPI_STATUS_IGNORE);
@@ -134,7 +131,7 @@ int main(int argc, char *argv[]) {
 
         free(primes);
     } else {
-        worker(rank, size - 1, base, count);
+        worker(base, count);
         int done[2] = {0, 0};
         MPI_Send(done, 2, MPI_INT, 0, RESULT, MPI_COMM_WORLD);
     }
