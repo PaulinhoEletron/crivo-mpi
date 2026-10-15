@@ -31,42 +31,21 @@ int main(int argc, char *argv[]){
 	
 	crivo(composto, n);
 	// chamado do crivo linear
-	FILE * saida = fopen("primos_linear.txt", "w");
-	if (saida == NULL) {
-		perror("primos_linear.txt");
-		free(composto);
-		return EXIT_FAILURE;
-	}
-	// termina a checagem de abertura
-	
-	for (int i = 2; i <= n; i++) {
-		if ( (composto[i]) == 0) {
-			if(fprintf(saida, "%d ", i) < 0) {
-				break;
-			}
-		}
-	}
-	fprintf(saida, "\n");
-	// termina a leitura do vetor
-	
-	int error = ferror(saida);
-	if(fclose(saida) != 0) {
-		error = 1;
-	}
-	// termina a checagem de fechamento
-	
-	free(composto);
-	
-	if(error) {
-	//checa se alguem error de output foi salvo
-		fprintf(stderr, "Error ao gravar primos_linear.txt.\n");
-		return EXIT_FAILURE;
-	}
-	
-	return EXIT_SUCCESS;
+
+    for(int i = 0; i <=n; i++)
+        composto[i] = 1 - composto[i];
+
+    if(write_file(composto, n) == EXIT_FAILURE){
+        fprintf(stderr, "Error ao gravar primos_linear.txt.\n");
+        return EXIT_FAILURE;
+    }
+
+    free(composto);
+
+    return EXIT_SUCCESS;
 }
-	
-	
-	
-	
-		
+
+
+
+
+

@@ -22,7 +22,7 @@ void crivo(unsigned char *composto, int n) {
 	}
 }
 
-int write_file(unsigned char *primes){
+int write_file(unsigned char *primes, int n){
     FILE *file = fopen("primos.txt", "w");
     if (file == NULL) {
         perror("primos.txt");
