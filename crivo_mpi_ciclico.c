@@ -107,27 +107,7 @@ int main(int argc, char *argv[]) {
             perror("primos.txt");
             result = EXIT_FAILURE;
         } else {
-            int total = 0;
-
-            for (int i = 2; i <= n; i++) {
-                if (primes[i]) {
-                    total++;
-                    if (fprintf(file, "%d ", i) < 0) {
-                        result = EXIT_FAILURE;
-                        break;
-                    }
-                }
-            }
-            fprintf(file, "\n");
-
-            if (fclose(file) != 0) result = EXIT_FAILURE;
-
-            if (result == EXIT_SUCCESS) {
-                printf("N=%d processes=%d workers=%d primes=%d seconds=%.6f\n",
-                        n, size, size - 1, total, elapsed);
-            } else {
-                fprintf(stderr, "Failed to write primos.txt.\n");
-            }
+            result = write_file(primes, n);
         }
 
         free(primes);
