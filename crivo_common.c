@@ -22,6 +22,27 @@ void crivo(unsigned char *composto, int n) {
 	}
 }
 
+int write_file(unsigned char *primes){
+    FILE *file = fopen("primos.txt", "w");
+    if (file == NULL) {
+        perror("primos.txt");
+        return EXIT_FAILURE;
+    } else {
+
+        for (int i = 2; i <= n; i++) {
+            if (primes[i]) {
+                if (fprintf(file, "%d ", i) < 0) {
+                    return EXIT_FAILURE;
+                }
+            }
+        }
+        fprintf(file, "\n");
+
+        if (fclose(file) != 0) return EXIT_FAILURE;
+    }
+
+}
+
 void send_segment(int low, int high, const int *base, int count) {
     int length = high - low + 1;
     unsigned char *composto = allocate((size_t)length, sizeof(*composto));
