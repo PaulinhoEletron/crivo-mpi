@@ -22,7 +22,7 @@ void crivo(unsigned char *composto, int n) {
 	}
 }
 
-int write_file(unsigned char *primes, int n){
+int write_file(unsigned char *numbers, int n){
     FILE *file = fopen("primos.txt", "w");
     if (file == NULL) {
         perror("primos.txt");
@@ -30,7 +30,7 @@ int write_file(unsigned char *primes, int n){
     } else {
 
         for (int i = 2; i <= n; i++) {
-            if (primes[i]) {
+            if (numbers[i]) {
                 if (fprintf(file, "%d ", i) < 0) {
                     return EXIT_FAILURE;
                 }
